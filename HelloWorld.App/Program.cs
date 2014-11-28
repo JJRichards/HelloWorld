@@ -6,7 +6,7 @@
         {
             var truck = new Truck(6);
 
-            var realImageCaptureService = new ImageCaptureService();
+            var realImageCaptureService = new ImageCaptureService(new SystemClock());
             truck.TakeAPhoto(realImageCaptureService);
         }
     }
