@@ -18,12 +18,14 @@ namespace HelloWorld.UnitTests
         public void ItShouldGetFull()
         {
             // Arrange
-            var truck = new Truck(3);
+            const int capacity = 3;
+            var truck = new Truck(capacity);
 
             // Act
-            truck.PickUpGarbage();
-            truck.PickUpGarbage();
-            truck.PickUpGarbage();
+            for (var i = 0; i < capacity; i++)
+            {
+                truck.PickUpGarbage();
+            }
 
             // Assert
             truck.IsFull.ShouldBe(true);
