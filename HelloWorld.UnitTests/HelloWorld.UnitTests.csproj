@@ -45,11 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="WhenATruckPicksUpLotsOfGarbage.cs" />
     <Compile Include="WhenTheTestHarnessRuns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloWorld.App\HelloWorld.App.csproj">
+      <Project>{649CD08F-3A1E-4325-86C2-A386CCC71A19}</Project>
+      <Name>HelloWorld.App</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
