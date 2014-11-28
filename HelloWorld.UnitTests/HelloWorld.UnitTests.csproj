@@ -46,7 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AFullTruck.cs" />
+    <Compile Include="LyingCheatingImageCaptureService.cs" />
     <Compile Include="WhenATruckPicksUpLotsOfGarbage.cs" />
+    <Compile Include="WhenATruckTakesAPhoto.cs" />
     <Compile Include="WhenTheTestHarnessRuns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace HelloWorld.App
 {
@@ -10,6 +11,7 @@ namespace HelloWorld.App
         public Truck(int capacity)
         {
             _capacity = capacity;
+            Photos = new List<Photo>();
         }
 
         public void PickUpGarbage()
@@ -22,6 +24,14 @@ namespace HelloWorld.App
         public bool IsFull
         {
             get { return _garbageCollected >= _capacity; }
+        }
+
+        public ICollection<Photo> Photos { get; protected set; }
+
+        public void TakeAPhoto(IImageCaptureService imageCaptureService)
+        {
+            var photo = imageCaptureService.CapturePhoto();
+            Photos.Add(photo);
         }
     }
 }
