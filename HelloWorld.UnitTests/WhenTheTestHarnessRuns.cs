@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Shouldly;
 
 namespace HelloWorld.UnitTests
@@ -19,7 +18,7 @@ namespace HelloWorld.UnitTests
         public void ItShouldGetFull()
         {
             // Arrange
-            var truck = new Truck();
+            var truck = new Truck(3);
 
             // Act
             truck.PickUpGarbage();
@@ -34,6 +33,12 @@ namespace HelloWorld.UnitTests
     public class Truck
     {
         private int _garbageCollected;
+        private readonly int _capacity;
+
+        public Truck(int capacity)
+        {
+            _capacity = capacity;
+        }
 
         public void PickUpGarbage()
         {
@@ -42,7 +47,7 @@ namespace HelloWorld.UnitTests
 
         public bool IsFull
         {
-            get { return _garbageCollected >= 3; }
+            get { return _garbageCollected >= _capacity; }
         }
     }
 }
