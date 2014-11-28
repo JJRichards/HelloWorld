@@ -1,3 +1,5 @@
+using System;
+
 namespace HelloWorld.App
 {
     public class Truck
@@ -12,6 +14,8 @@ namespace HelloWorld.App
 
         public void PickUpGarbage()
         {
+            if (IsFull) throw new InvalidOperationException("I'm full. Go away.");
+
             _garbageCollected++;
         }
 

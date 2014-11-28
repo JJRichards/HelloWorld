@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AFullTruck.cs" />
     <Compile Include="WhenATruckPicksUpLotsOfGarbage.cs" />
     <Compile Include="WhenTheTestHarnessRuns.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
