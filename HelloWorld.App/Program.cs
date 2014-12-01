@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Autofac;
 
 namespace HelloWorld.App
