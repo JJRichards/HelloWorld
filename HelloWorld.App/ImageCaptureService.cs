@@ -6,9 +6,9 @@ namespace HelloWorld.App
     {
         private readonly IClock _clock;
         private readonly ILocationService _locationService;
-        private readonly CaptureSource _captureSource;
+        private readonly ICaptureSource _captureSource;
 
-        public ImageCaptureService(SystemClock clock, LocationService locationService, CaptureSource captureSource)
+        public ImageCaptureService(IClock clock, ILocationService locationService, ICaptureSource captureSource)
         {
             _clock = clock;
             _locationService = locationService;

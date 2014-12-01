@@ -13,7 +13,8 @@ namespace HelloWorld.App
             //var imageCaptureService = new ImageCaptureService(new SystemClock(), new LocationService());
             //var imageCaptureService = ImageCaptureServiceFactory.Create();
             //var imageCaptureService = (ImageCaptureService)AutomaticFactory.Create(typeof(ImageCaptureService));
-            var imageCaptureService = AutomaticFactory.Create<ImageCaptureService>();
+            //var imageCaptureService = AutomaticFactory.Create<ImageCaptureService>();
+            var imageCaptureService = AutomaticFactory.Create<IImageCaptureService>();
 
             truck.TakeAPhoto(imageCaptureService);
 
@@ -32,7 +33,9 @@ namespace HelloWorld.App
 
         public static object Create(Type type)
         {
-            var constructor = type.GetConstructors().Single();
+            var typeWeActuallyWant = FigureOutWhatTypeWeWant(type);
+
+            var constructor = typeWeActuallyWant.GetConstructors().Single();
             var args = new List<object>();
             foreach (var p in constructor.GetParameters())
             {
@@ -40,8 +43,20 @@ namespace HelloWorld.App
                 args.Add(arg);
             }
 
-            var instance = Activator.CreateInstance(type, args.ToArray());
+            var instance = Activator.CreateInstance(typeWeActuallyWant, args.ToArray());
             return instance;
+        }
+
+        private static Type FigureOutWhatTypeWeWant(Type type)
+        {
+            var concreteType = type.Assembly
+                .DefinedTypes
+                .Where(t => type.IsAssignableFrom(t))
+                .Where(t => !t.IsInterface)
+                .Where(t => !t.IsAbstract)
+                .First();
+
+            return concreteType;
         }
     }
 }

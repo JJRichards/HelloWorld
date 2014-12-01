@@ -1,6 +1,10 @@
 namespace HelloWorld.App
 {
-    public class CaptureSource
+    public interface ICaptureSource
+    {
+    }
+
+    public class CaptureSource : ICaptureSource
     {
     }
 }

@@ -4,9 +4,9 @@ namespace HelloWorld.App
 {
     public class LocationService : ILocationService
     {
-        private readonly SystemClock _clock;
+        private readonly IClock _clock;
 
-        public LocationService(SystemClock clock)
+        public LocationService(IClock clock)
         {
             _clock = clock;
         }
