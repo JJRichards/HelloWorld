@@ -1,4 +1,6 @@
-﻿namespace HelloWorld.App
+﻿using System;
+
+namespace HelloWorld.App
 {
     internal class Program
     {
@@ -6,10 +8,10 @@
         {
             var truck = new Truck(6);
 
-            var clock = new SystemClock();
-            var locationService = new LocationService();
-            var imageCaptureService = new ImageCaptureService(clock, locationService);
+            var imageCaptureService = new ImageCaptureService(new SystemClock(), new LocationService());
             truck.TakeAPhoto(imageCaptureService);
+
+            Console.ReadKey();
         }
     }
 }

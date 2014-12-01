@@ -1,10 +1,13 @@
-﻿namespace HelloWorld.App
+﻿using System;
+
+namespace HelloWorld.App
 {
     public class LocationService : ILocationService
     {
         public Location WhereAmI()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Querying location...");
+            return new Location(-27, 153);
         }
     }
 }

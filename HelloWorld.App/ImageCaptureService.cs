@@ -18,35 +18,9 @@ namespace HelloWorld.App
             var timestamp = _clock.UtcNow;
             var location = _locationService.WhereAmI();
 
-            var photo = new Photo();
-            throw new NotImplementedException();
-        }
-    }
+            Console.WriteLine("I took a photo at {0} {1}.", timestamp, location);
 
-    public interface ILocationService
-    {
-        Location WhereAmI();
-    }
-
-    public class Location
-    {
-        private readonly decimal _latitude;
-        private readonly decimal _longitude;
-
-        public Location(decimal latitude, decimal longitude)
-        {
-            _latitude = latitude;
-            _longitude = longitude;
-        }
-
-        public decimal Latitude
-        {
-            get { return _latitude; }
-        }
-
-        public decimal Longitude
-        {
-            get { return _longitude; }
+            return new Photo();
         }
     }
 }
