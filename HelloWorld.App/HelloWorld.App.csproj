@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -42,12 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllTheThingsModule.cs" />
+    <Compile Include="AutomaticFactory.cs" />
     <Compile Include="CaptureSource.cs" />
+    <Compile Include="ICaptureSource.cs" />
     <Compile Include="IClock.cs" />
     <Compile Include="IImageCaptureService.cs" />
     <Compile Include="ILocationService.cs" />
     <Compile Include="ImageCaptureService.cs" />
     <Compile Include="ImageCaptureServiceFactory.cs" />
+    <Compile Include="IoC.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="LocationService.cs" />
     <Compile Include="LocationServiceFactory.cs" />
