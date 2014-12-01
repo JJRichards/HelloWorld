@@ -28,7 +28,7 @@ namespace HelloWorld.App
             var args = new List<object>();
             foreach (var p in constructor.GetParameters())
             {
-                var arg = Activator.CreateInstance(p.ParameterType);
+                var arg = Create(p.ParameterType);
                 args.Add(arg);
             }
 

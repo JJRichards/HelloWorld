@@ -1,10 +1,13 @@
-﻿namespace HelloWorld.App
+﻿using System;
+
+namespace HelloWorld.App
 {
     public class LocationServiceFactory
     {
         public static ILocationService Create()
         {
-            return new LocationService();
+            throw new NotImplementedException();
+            //return new LocationService();
         }
     }
 }
