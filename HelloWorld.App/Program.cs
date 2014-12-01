@@ -12,7 +12,8 @@ namespace HelloWorld.App
 
             //var imageCaptureService = new ImageCaptureService(new SystemClock(), new LocationService());
             //var imageCaptureService = ImageCaptureServiceFactory.Create();
-            var imageCaptureService = (ImageCaptureService)AutomaticFactory.Create(typeof(ImageCaptureService));
+            //var imageCaptureService = (ImageCaptureService)AutomaticFactory.Create(typeof(ImageCaptureService));
+            var imageCaptureService = AutomaticFactory.Create<ImageCaptureService>();
 
             truck.TakeAPhoto(imageCaptureService);
 
@@ -22,6 +23,13 @@ namespace HelloWorld.App
 
     internal class AutomaticFactory
     {
+        public static T Create<T>()
+        {
+            var type = typeof (T);
+            var instance = Create(type);
+            return (T) instance;
+        }
+
         public static object Create(Type type)
         {
             var constructor = type.GetConstructors().Single();
