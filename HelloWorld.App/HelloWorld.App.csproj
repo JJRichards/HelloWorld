@@ -45,6 +45,7 @@
     <Compile Include="IClock.cs" />
     <Compile Include="IImageCaptureService.cs" />
     <Compile Include="ImageCaptureService.cs" />
+    <Compile Include="LocationService.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
