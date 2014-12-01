@@ -46,8 +46,10 @@
     <Compile Include="IImageCaptureService.cs" />
     <Compile Include="ILocationService.cs" />
     <Compile Include="ImageCaptureService.cs" />
+    <Compile Include="ImageCaptureServiceFactory.cs" />
     <Compile Include="Location.cs" />
     <Compile Include="LocationService.cs" />
+    <Compile Include="LocationServiceFactory.cs" />
     <Compile Include="Photo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
