@@ -9,6 +9,10 @@ namespace HelloWorld.App
             base.Load(builder);
 
             builder.RegisterAssemblyTypes(ThisAssembly).AsImplementedInterfaces();
+
+            builder.RegisterType<SystemClock>()
+                   .AsImplementedInterfaces()
+                   .SingleInstance();
         }
     }
 }
