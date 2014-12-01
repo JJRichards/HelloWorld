@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CaptureSource.cs" />
     <Compile Include="IClock.cs" />
     <Compile Include="IImageCaptureService.cs" />
     <Compile Include="ILocationService.cs" />
